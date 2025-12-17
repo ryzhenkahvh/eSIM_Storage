@@ -1,7 +1,7 @@
 package com.example.esim;
 
 import androidx.room.Dao;
-import androidx.room.Delete; // Импорт важен
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import java.util.List;
@@ -19,4 +19,5 @@ public interface EsimProfileDao {
 
     @Query("SELECT * FROM esim_profiles WHERE id = :id")
     EsimProfile getProfileById(int id);
+
 }
