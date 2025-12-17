@@ -18,5 +18,6 @@ public class EsimProfile {
         this.matchingId = matchingId;
     }
 
-    // Getters and setters if needed, but for simplicity, public fields
+    // Getters and setters
+
 }
