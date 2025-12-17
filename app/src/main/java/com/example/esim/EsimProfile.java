@@ -8,7 +8,7 @@ public class EsimProfile {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    public String name; // Optional name for the profile
+    public String name; // Имя для профиля
     public String activationCode;
     public String matchingId;
 
@@ -21,3 +21,4 @@ public class EsimProfile {
     // Getters and setters
 
 }
+
