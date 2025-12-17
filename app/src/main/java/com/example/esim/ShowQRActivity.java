@@ -77,7 +77,7 @@ public class ShowQRActivity extends AppCompatActivity {
                     tvRawCode.setText(profile.activationCode);
 
                     // Формируем строку для QR (LPA формат)
-                    // Обычно это LPA:1$SMDP_ADDRESS$ACTIVATION_CODE
+                    // LPA:1$SMDP_ADDRESS$ACTIVATION_CODE
                     String qrData = "LPA:1$" + profile.activationCode + "$" + (profile.matchingId != null ? profile.matchingId : "");
                     generateQRCode(qrData);
                 } else {
@@ -138,7 +138,7 @@ public class ShowQRActivity extends AppCompatActivity {
         Toast.makeText(this, "Code copied! Opening Settings...", Toast.LENGTH_LONG).show();
 
         // 2. Пытаемся открыть системные настройки eSIM
-        // Это максимально глубокая интеграция, доступная без root/carrier прав
+        // без root/carrier прав
         try {
             Intent intent = new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
             startActivity(intent);
@@ -152,4 +152,5 @@ public class ShowQRActivity extends AppCompatActivity {
             }
         }
     }
+
 }
