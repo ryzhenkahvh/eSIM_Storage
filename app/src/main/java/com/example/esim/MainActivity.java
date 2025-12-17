@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         // 5. ЛОГИКА NFC (Пока заглушка для демо)
         btnSync.setOnClickListener(v -> {
             Toast.makeText(this, "Searching for NFC Tag...", Toast.LENGTH_SHORT).show();
-            // В будущем здесь будет код для чтения/записи ST25TV02K
+            // Код для чтения/записи ST25TV02K
         });
     }
 
@@ -77,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
         loadProfiles();
     }
 
-    /**
-     * Запускает сканер QR-кодов с использованием нашего кастомного дизайна
-     */
+    // Запускает сканер QR-кодов с использованием кастомного дизайна
     private void startScan() {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setCaptureActivity(CustomScannerActivity.class); // <-- ВАЖНО: Наш красивый сканер
@@ -90,9 +88,8 @@ public class MainActivity extends AppCompatActivity {
         integrator.initiateScan();
     }
 
-    /**
-     * Получает результат сканирования от CustomScannerActivity
-     */
+
+    // Получает результат сканирования от CustomScannerActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
@@ -109,9 +106,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Разбирает строку LPA и сохраняет в БД
-     */
+    // Разбирает строку LPA и сохраняет в БД
     private void parseAndSaveEsimData(String data) {
         // Формат обычно: LPA:1$SMDP_ADDRESS$ACTIVATION_CODE
         if (data != null && data.startsWith("LPA:")) {
@@ -121,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             String activationCode = (parts.length > 1) ? parts[1] : "Unknown Code";
             String matchingId = (parts.length > 2) ? parts[2] : "";
 
-            // Генерируем имя (в реальном проекте можно спрашивать пользователя)
+            // Генерируем имя
             String name = "New eSIM " + (System.currentTimeMillis() % 1000);
 
             saveProfile(name, activationCode, matchingId);
@@ -130,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Асинхронное сохранение в базу данных
-     */
+    // Асинхронное сохранение в базу данных
     private void saveProfile(String name, String activationCode, String matchingId) {
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -151,9 +144,7 @@ public class MainActivity extends AppCompatActivity {
         }.execute();
     }
 
-    /**
-     * Асинхронная загрузка всех профилей из БД
-     */
+    // Асинхронная загрузка всех профилей из БД
     private void loadProfiles() {
         new AsyncTask<Void, Void, List<EsimProfile>>() {
             @Override
