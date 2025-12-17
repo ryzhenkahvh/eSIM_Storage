@@ -81,7 +81,7 @@ public class ScanActivity extends AppCompatActivity {
     }
 
     private void parseAndSaveEsimData(String data) {
-        // Assume format: LPA:1$activation_code$matching_id
+        // LPA:1$activation_code$matching_id
         if (data.startsWith("LPA:")) {
             String[] parts = data.split("\\$");
             if (parts.length >= 3) {
@@ -117,5 +117,6 @@ public class ScanActivity extends AppCompatActivity {
             }
         }.execute();
     }
+
 
 }
