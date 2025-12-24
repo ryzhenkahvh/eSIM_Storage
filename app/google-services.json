@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "595056096208",
+    "firebase_url": "https://esim-storage-default-rtdb.firebaseio.com",
+    "project_id": "esim-storage",
+    "storage_bucket": "esim-storage.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595056096208:android:64a6320430e4ebd1d53fd5",
+        "android_client_info": {
+          "package_name": "com.example.esim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595056096208-n5cminii7la7ki8kag4pf0usar4c53j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.esim",
+            "certificate_hash": "22326dc807656f71bdd228097c0c1f8668049463"
+          }
+        },
+        {
+          "client_id": "595056096208-4df00m10oqf9euv29jlhslgk8jalqhio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7fuDqjpprsxB78qQXMZOjnM7owhGf0LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595056096208-4df00m10oqf9euv29jlhslgk8jalqhio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
